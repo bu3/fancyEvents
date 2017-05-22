@@ -28,3 +28,12 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+# Setup WebDriver I/O dependencies
+Run `./wdio.setup.sh` for downloading web drivers for Chrome and Firefox and the Selenium Server
+
+
+#Running e2e tests
+In a terminal window start the app with `npm start` <br/>
+In a terminal window run Selenium server with `java -jar -Dwebdriver.gecko.driver=./chromedriver selenium-server-standalone-3.0.1.jar`<br/>
+In a terminal window run WDIO with `./node_modules/.bin/wdio wdio.conf.js`<br/>
