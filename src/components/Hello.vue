@@ -1,25 +1,35 @@
 <template>
-  <div class="hell">
+  <div class="hello">
     <h1>{{ msg }}</h1>
 
-    This is Hello component
-    <todo-item></todo-item>
+       <button id="myButton"
+            v-on:click='toggleButtonClicked()'>Click me</button>
+       <div id="someText" v-if="buttonWasClicked">On</div>
+       <div id="someText" v-else>Off</div>
+
+    <input id="nameInput" v-model="message" placeholder="edit me">
+    <h2 id="nameHeader">Hi {{ message }}</h2>
   </div>
 </template>
 
 <script>
-  import TodoItem from '@/components/TodoItem';
+  /* eslint-disable */
 
   export default {
     name: 'hello',
-    components: {
-      'todo-item': TodoItem,
-    },
     data() {
       return {
         msg: 'Welcome to Fancy Events',
+        message: '',
+        buttonWasClicked: false
       };
     },
+    methods:
+      {
+        toggleButtonClicked(){
+            this.buttonWasClicked = !this.buttonWasClicked;
+        }
+      }
   };
 </script>
 

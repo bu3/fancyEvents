@@ -9,3 +9,11 @@ test/e2e/reports
 selenium-debug.log
 .idea
 build
+
+
+chromedriver
+geckodriver
+selenium-server-standalone-3.0.1.jar
+selenium-debug.log
+allure-results
+errorShots
