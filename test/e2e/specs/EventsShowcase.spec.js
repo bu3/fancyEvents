@@ -7,6 +7,11 @@ describe("EventsShowcase", function(){
     helloButton.click();
     var destination = browser.getUrl();
     assert(destination === 'http://localhost:8080/#/hello');
+    var apiUrl = browser.getText("h2");
+    console.log(apiUrl);
+    assert(apiUrl === 'http://localhost:8080/#/hello');
+
   });
+
 
 });

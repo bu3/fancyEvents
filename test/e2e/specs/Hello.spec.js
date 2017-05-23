@@ -17,6 +17,9 @@ xdescribe('Index page ', function() {
   it("should update the name heading when the text in the name field changes",
     function () {
       browser.url('http://localhost:8080/#/hello');
+      var eventsApi = browser.getText('h2');
+      console.log('---------------------------------------------------------------------------------', eventsApi);
+      assert(eventsApi === 'http://localhost:8080');
       var headingText = browser.getText('#nameHeader');
       assert(headingText === 'Hi');
       var nameInput = $('#nameInput');

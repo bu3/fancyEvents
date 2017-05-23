@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h2>{{ apiUrl }}</h2>
 
        <button id="myButton"
             v-on:click='toggleButtonClicked()'>Click me</button>
@@ -21,7 +22,8 @@
       return {
         msg: 'Welcome to Fancy Events',
         message: '',
-        buttonWasClicked: false
+        buttonWasClicked: false,
+        apiUrl: process.env.EVENTS_API
       };
     },
     methods:
