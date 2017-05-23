@@ -4,17 +4,38 @@
 
 import Vue from 'vue';
 import VueResource from 'vue-resource';
+import VueI18n from 'vue-i18n';
 import App from './App';
 import router from './router';
+
 
 Vue.config.productionTip = false;
 Vue.config.apiUrl = process.env.EVENTS_API;
 
 Vue.use(VueResource);
+Vue.use(VueI18n);
 
-new Vue({
+const messages =
+{
+    en: {
+      select: 'dynamic message',
+    }
+  ,
+};
+
+const i18n = new VueI18n({
+  locale: 'en', // set locale
+  messages, // set locale messages
+});
+
+const app = new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App },
+  components: {App},
+  i18n
 });
+
+
+
+
